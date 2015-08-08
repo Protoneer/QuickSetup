@@ -32,7 +32,7 @@
 #include "config.h"
 #include "wifi.h"
 #include "webinterface.h"
-#include "command.h"
+//#include "command.h"
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
@@ -139,6 +139,8 @@ uint8_t i,data;
     WiFiClient serverClient = data_server->available();
     serverClient.stop();
   }
+
+  /*
   //check clients for data
   for(i = 0; i < MAX_SRV_CLIENTS; i++){
     if (serverClients[i] && serverClients[i].connected()){
@@ -153,6 +155,7 @@ uint8_t i,data;
       }
     }
   }
+
   //check UART for data
   if(Serial.available()){
     size_t len = Serial.available();
@@ -167,6 +170,9 @@ uint8_t i,data;
 	  COMMAND::read_buffer_serial(sbuf, len);
     }
   }
+  */
+
+  
   if (web_interface->restartmodule)
 	{
 			ESP.restart();

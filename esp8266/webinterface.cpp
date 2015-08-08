@@ -1507,6 +1507,8 @@ void handle_not_found()
   web_interface->WebServer.send(200, "text/html", buffer2send);
 }
 
+
+/*
 void handle_web_interface_printer()
 {
   String IP;
@@ -1564,6 +1566,7 @@ void handle_web_interface_printer()
   buffer2send+=(PROGMEM2CHAR(PAGE_BOTTOM));
   web_interface->WebServer.send(200, "text/html", buffer2send);
 }
+*/
 
 void handle_web_interface_status()
 {
@@ -1789,7 +1792,7 @@ WEBINTERFACE_CLASS::WEBINTERFACE_CLASS (int port):WebServer(port)
   WebServer.on("/CONFIGAP",HTTP_ANY, handle_web_interface_configAP);
   WebServer.on("/CONFIGSTA",HTTP_ANY, handle_web_interface_configSTA);
   WebServer.on("/STATUS",HTTP_ANY, handle_web_interface_status);
-  WebServer.on("/PRINTER",HTTP_ANY, handle_web_interface_printer);
+  //WebServer.on("/PRINTER",HTTP_ANY, handle_web_interface_printer);
   WebServer.on("/CMD",HTTP_ANY, handle_web_command);
   WebServer.on("/mincss.css",HTTP_GET, handle_css);
   WebServer.on("/RESTART",HTTP_GET, handle_restart);
